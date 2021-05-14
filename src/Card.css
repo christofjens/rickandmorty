@@ -34,7 +34,7 @@
 }
 
 .Card__main {
-  margin: 20px;
+  margin: 0 20px 20px 20px;
 }
 
 .Card__main.hidden {
