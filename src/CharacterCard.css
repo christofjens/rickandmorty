@@ -1,0 +1,42 @@
+.CharacterCard {
+  width: 100%;
+  max-width: 500px;
+  min-height: 120px;
+  padding: 0;
+  margin: 40px 20px;
+  border: 1px #999 solid;
+  border-radius: 0;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.76);
+}
+
+.CharacterCard__profile {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #999;
+  border-radius: 50%;
+}
+
+.CharacterCard__h2 {
+  margin: 20px 20px 0 20px;
+}
+
+.CharacterCard__button {
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  border: none;
+  border-top: 1px #bbb solid;
+  border-bottom: 1px #bbb solid;
+  border-radius: 0;
+}
+
+.CharacterCard__main {
+  margin: 0 20px 20px 20px;
+}
+
+.CharacterCard__main.hidden {
+  display: none;
+}
