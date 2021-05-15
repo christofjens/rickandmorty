@@ -4,9 +4,11 @@ import './Navigation.css'
 export default function Navigation() {
   return (
     <>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
+      <button className="Navigation__nav-button">Characters</button>
+      <button className="Navigation__nav-button Navigation__nav-button--center">
+        Locations
+      </button>
+      <button className="Navigation__nav-button">Episodes</button>
     </>
   )
 }
