@@ -1,5 +1,8 @@
 .App {
-  display: flex;
-  flex-wrap: wrap;
-  padding: auto;
+  display: grid;
+  grid-template-rows: auto 48px;
+}
+
+.Navigation {
+  overflow-y: scroll;
 }
