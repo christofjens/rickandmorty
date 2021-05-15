@@ -9,21 +9,18 @@ export default function CharacterCard({ name, image, gender, id, location }) {
 
   return (
     <>
-      <div key={id} className="CharacterCard">
-        <header className="CharacterCard__header">
+      <div key={id}>
+        <header>
           Meet
-          <h2 className="CharacterCard__h2">{name}</h2>
+          <h2>{name}</h2>
           from Planet {location}
-          <img className="CharacterCard__profile" src={image} alt=""></img>
+          <img src={image} alt=""></img>
         </header>
-        <button
-          className="CharacterCard__button"
-          onClick={() => toggleMain(!isHidden)}
-        >
+        <button onClick={() => toggleMain(!isHidden)}>
           {isHidden ? 'Hide' : 'Show'} Info
         </button>
         {isHidden && (
-          <main className="CharacterCard__main">
+          <main>
             {name} is a {gender} from the Series Rick and Morty.
           </main>
         )}
