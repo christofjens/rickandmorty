@@ -3,12 +3,12 @@ import './App.css'
 import CharacterCard from './CharacterCard'
 import LocationCard from './LocationCard'
 import EpisodeCard from './EpisodeCard'
-import Navigation from './Navigation'
+// import Navigation from './Navigation'
 
 export default function App() {
-  const charUrl = 'https://rickandmortyapi.com/api/character/?page=1'
-  const locUrl = 'https://rickandmortyapi.com/api/location/?page=1'
-  const epUrl = 'https://rickandmortyapi.com/api/episode/?page=1'
+  const charUrl = 'https://rickandmortyapi.com/api/character'
+  const locUrl = 'https://rickandmortyapi.com/api/location'
+  const epUrl = 'https://rickandmortyapi.com/api/episode'
   const [characters, setCharacters] = useState([])
   const [locations, setLocations] = useState([])
   const [episodes, setEpisodes] = useState([])
@@ -16,7 +16,7 @@ export default function App() {
   useEffect(() => {
     fetch(charUrl)
       .then(res => res.json())
-      .then(resBody => setCharacters(resBody.results))
+      .then(resBody => setCharacters([...resBody.results]))
   }, [charUrl])
 
   useEffect(() => {
@@ -34,20 +34,41 @@ export default function App() {
   return (
     <div className="App">
       <section className="CharacterCard">
-        <CharacterCard />
+        {characters.map(({ id, name, image, species, status }) => (
+          <CharacterCard
+            key={id}
+            name={name}
+            image={image}
+            species={species}
+            status={status}
+          ></CharacterCard>
+        ))}
       </section>
-
       <section className="LocationCard">
-        <LocationCard />
+        {locations.map(({ id, type, name, dimension }) => (
+          <LocationCard
+            key={id}
+            type={type}
+            name={name}
+            dimension={dimension}
+          />
+        ))}
       </section>
 
       <section className="EpisodeCard">
-        <EpisodeCard />
+        {episodes.map(({ id, name, air_date, episode }) => (
+          <EpisodeCard
+            key={id}
+            name={name}
+            air_date={air_date}
+            episode={episode}
+          />
+        ))}
       </section>
 
-      <section className="Navigation">
+      {/* <section className="Navigation">
         <Navigation />
-      </section>
+      </section> */}
     </div>
   )
 }
