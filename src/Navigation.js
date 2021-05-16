@@ -1,14 +1,17 @@
-import * as React from 'react'
 import './Navigation.css'
+import NavigationButton from './NavigationButton'
 
-export default function Navigation() {
+export default function Navigation({ navItems, activePage, setActivePage }) {
   return (
-    <>
-      <button className="Navigation__nav-button">Characters</button>
-      <button className="Navigation__nav-button Navigation__nav-button--center">
-        Locations
-      </button>
-      <button className="Navigation__nav-button">Episodes</button>
-    </>
+    <nav className="Navigation">
+      {navItems.map(navItem => (
+        <NavigationButton
+          key={navItem}
+          navItem={navItem}
+          activePage={activePage}
+          setActivePage={setActivePage}
+        ></NavigationButton>
+      ))}
+    </nav>
   )
 }
