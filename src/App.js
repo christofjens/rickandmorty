@@ -9,9 +9,13 @@ export default function App() {
   const charUrl = 'https://rickandmortyapi.com/api/character'
   const locUrl = 'https://rickandmortyapi.com/api/location'
   const epUrl = 'https://rickandmortyapi.com/api/episode'
+
   const [characters, setCharacters] = useState([])
   const [locations, setLocations] = useState([])
   const [episodes, setEpisodes] = useState([])
+
+  const navItems = ['characters', 'locations', 'episodes']
+  const [activePage, setActivePage] = useState('characters')
 
   useEffect(() => {
     fetch(charUrl)
@@ -66,9 +70,11 @@ export default function App() {
         ))}
       </section>
 
-      {/* <section className="Navigation">
-        <Navigation />
-      </section> */}
+      <section className="Navigation">
+        activePage={activePage}
+        navItems={navItems}
+        setActivePage={setActivePage}
+      </section>
     </div>
   )
 }
