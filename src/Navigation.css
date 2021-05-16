@@ -1,14 +1,5 @@
 .Navigation {
   background-color: white;
-}
-
-.Navigation__nav-button {
-  width: 33%;
-  height: 48px;
-  border: none;
-}
-
-.Navigation__nav-button--center {
-  border-left: 1px solid #666;
-  border-right: 1px solid #666;
+  width: 100%;
+  max-width: 500px;
 }

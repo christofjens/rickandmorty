@@ -1,13 +1,21 @@
 .App {
+  height: 100vh;
   display: grid;
   grid-template-rows: auto 48px;
 }
 
-.Navigation {
+.CharactersSection {
   overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.CharactersSection {
+.LocationsSection {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.EpisodesSection {
   display: flex;
   flex-wrap: wrap;
 }

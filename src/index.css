@@ -12,9 +12,19 @@ h2,
 h3 {
   font-family: 'Gloria Hallelujah', sans-serif;
   text-align: center;
+  line-height: 1.7rem;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App {
+  display: grid;
+  grid-template-rows: auto 48px;
+}
+
+.ContentMain {
+  overflow-y: scroll;
 }

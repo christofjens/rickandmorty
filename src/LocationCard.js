@@ -3,12 +3,12 @@ import './LocationCard.css'
 
 export default function LocationCard({ id, type, name, dimension }) {
   return (
-    <div>
-      <h2>
+    <div className="LocationCard">
+      <h2 className="LocationCard__headline">
         {type} {name}
       </h2>
-      <p>
-        The {type} {name} is located in dimension {dimension}.
+      <p className="LocationCard__main">
+        The {type} {name} is located in the {dimension}.
       </p>
     </div>
   )
