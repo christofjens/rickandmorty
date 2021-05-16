@@ -3,7 +3,7 @@ import './App.css'
 import CharacterCard from './CharacterCard'
 import LocationCard from './LocationCard'
 import EpisodeCard from './EpisodeCard'
-// import Navigation from './Navigation'
+import Navigation from './Navigation'
 
 export default function App() {
   const charUrl = 'https://rickandmortyapi.com/api/character'
