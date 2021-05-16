@@ -6,3 +6,8 @@
 .Navigation {
   overflow-y: scroll;
 }
+
+.CharactersSection {
+  display: flex;
+  flex-wrap: wrap;
+}

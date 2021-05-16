@@ -1,24 +1,35 @@
 import { useState } from 'react'
 import './CharacterCard.css'
 
-export default function CharacterCard({ name, image, gender, location }) {
+export default function CharacterCard({
+  name,
+  image,
+  species,
+  type,
+  location,
+}) {
   const [isHidden, setIsHidden] = useState(false)
   const toggleMain = () => {
     setIsHidden(!isHidden)
   }
 
   return (
-    <section>
-      <h2>{name}</h2>
-      from Planet {location}
-      <img src={image} alt=""></img>
-      <button onClick={() => toggleMain(!isHidden)}>
-        {isHidden ? 'Hide' : 'Show'} Info
-      </button>
+    <section className="CharacterCard">
+      <div className="CharacterCard__background"></div>
+      <h2 className="CharacterCard__headline">{name}</h2>
+      <p className="CharacterCard__main CharacterCard__main--top">
+        from {location}
+      </p>
+      <img
+        onClick={() => toggleMain(!isHidden)}
+        src={image}
+        alt=""
+        className="CharacterCard__portrait"
+      ></img>
       {isHidden && (
-        <div>
-          {name} is a {gender} from the Series Rick and Morty.
-        </div>
+        <p className="CharacterCard__main">
+          {name} is a {species} {type} from the Series Rick and Morty.
+        </p>
       )}
     </section>
   )
