@@ -14,17 +14,12 @@ export default function CharacterCard({
   }
 
   return (
-    <section className="CharacterCard">
+    <section className="CharacterCard" onClick={() => toggleMain(!isHidden)}>
       <h2 className="CharacterCard__headline">{name}</h2>
       <p className="CharacterCard__main CharacterCard__main--top">
         from {location}
       </p>
-      <img
-        onClick={() => toggleMain(!isHidden)}
-        src={image}
-        alt=""
-        className="CharacterCard__portrait"
-      ></img>
+      <img src={image} alt="" className="CharacterCard__portrait"></img>
       <div className="CharacterCard__background"></div>
       {isHidden && (
         <p className="CharacterCard__main">

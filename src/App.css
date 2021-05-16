@@ -1,5 +1,7 @@
 .App {
   height: 100vh;
+  max-width: 880px;
+  margin: 0 auto;
   display: grid;
   grid-template-rows: auto 48px;
 }
@@ -8,14 +10,17 @@
   overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .LocationsSection {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .EpisodesSection {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }

@@ -8,7 +8,7 @@ export default function LocationCard({ id, type, name, dimension }) {
         {type} {name}
       </h2>
       <p className="LocationCard__main">
-        The {type} {name} is located in the {dimension}.
+        {type} {name} is located in the {dimension}.
       </p>
     </div>
   )
