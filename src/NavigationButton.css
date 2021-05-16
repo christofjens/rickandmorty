@@ -1,0 +1,14 @@
+.NavigationButton {
+  width: 33.33%;
+  height: 48px;
+  background-color: rgba(31, 28, 116, 1);
+  color: white;
+  font-family: 'Gloria Hallelujah', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+}
+
+.NavigationButton--active {
+  background-color: rgba(151, 76, 175, 1);
+}

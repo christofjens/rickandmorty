@@ -14,8 +14,8 @@ export default function App() {
   const [locations, setLocations] = useState([])
   const [episodes, setEpisodes] = useState([])
 
-  const navItems = ['characters', 'locations', 'episodes']
-  const [activePage, setActivePage] = useState('characters')
+  const navItems = ["CHAR's", "LOC's", "EP's"]
+  const [activePage, setActivePage] = useState("CHAR's")
 
   useEffect(() => {
     fetch(charUrl)
@@ -37,51 +37,53 @@ export default function App() {
 
   return (
     <div className="App">
-      {activePage === 'characters' && (
-        <section className="CharactersSection">
-          {characters.map(({ id, name, image, species, status, location }) => (
-            <CharacterCard
-              key={id}
-              name={name}
-              image={image}
-              species={species}
-              status={status}
-              location={location.name}
-            ></CharacterCard>
-          ))}
-        </section>
-      )}
-      {activePage === 'locations' && (
-        <section>
-          {locations.map(({ id, type, name, dimension }) => (
-            <LocationCard
-              key={id}
-              type={type}
-              name={name}
-              dimension={dimension}
-            />
-          ))}
-        </section>
-      )}
-      {activePage === 'episodes' && (
-        <section>
-          {episodes.map(({ id, name, air_date, episode }) => (
-            <EpisodeCard
-              key={id}
-              name={name}
-              air_date={air_date}
-              episode={episode}
-            />
-          ))}
-        </section>
-      )}
-      <section className="Navigation">
-        <Navigation
-          activePage={activePage}
-          navItems={navItems}
-          setActivePage={setActivePage}
-        />
-      </section>
+      <div className="ContentMain">
+        {activePage === "CHAR's" && (
+          <section className="CharactersSection">
+            {characters.map(
+              ({ id, name, image, species, status, location }) => (
+                <CharacterCard
+                  key={id}
+                  name={name}
+                  image={image}
+                  species={species}
+                  status={status}
+                  location={location.name}
+                ></CharacterCard>
+              )
+            )}
+          </section>
+        )}
+        {activePage === "LOC's" && (
+          <section className="LocationsSection">
+            {locations.map(({ id, type, name, dimension }) => (
+              <LocationCard
+                key={id}
+                type={type}
+                name={name}
+                dimension={dimension}
+              />
+            ))}
+          </section>
+        )}
+        {activePage === "EP's" && (
+          <section className="EpisodesSection">
+            {episodes.map(({ id, name, air_date, episode }) => (
+              <EpisodeCard
+                key={id}
+                name={name}
+                air_date={air_date}
+                episode={episode}
+              />
+            ))}
+          </section>
+        )}
+      </div>
+      <Navigation
+        activePage={activePage}
+        navItems={navItems}
+        setActivePage={setActivePage}
+      />
     </div>
   )
 }
