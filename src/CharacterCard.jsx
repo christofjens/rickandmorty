@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './CharacterCard.css'
 
-export default function CharacterCard({ name, image, gender, id, location }) {
+export default function CharacterCard({ name, image, gender, location }) {
   const [isHidden, setIsHidden] = useState(false)
   const toggleMain = () => {
     setIsHidden(!isHidden)
   }
 
   return (
-    <div key={id}>
+    <section>
       <h2>{name}</h2>
       from Planet {location}
       <img src={image} alt=""></img>
@@ -20,6 +20,6 @@ export default function CharacterCard({ name, image, gender, id, location }) {
           {name} is a {gender} from the Series Rick and Morty.
         </div>
       )}
-    </div>
+    </section>
   )
 }
