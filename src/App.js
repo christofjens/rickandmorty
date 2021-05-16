@@ -37,43 +37,49 @@ export default function App() {
 
   return (
     <div className="App">
-      <section className="CharacterCard">
-        {characters.map(({ id, name, image, species, status }) => (
-          <CharacterCard
-            key={id}
-            name={name}
-            image={image}
-            species={species}
-            status={status}
-          ></CharacterCard>
-        ))}
-      </section>
-      <section className="LocationCard">
-        {locations.map(({ id, type, name, dimension }) => (
-          <LocationCard
-            key={id}
-            type={type}
-            name={name}
-            dimension={dimension}
-          />
-        ))}
-      </section>
-
-      <section className="EpisodeCard">
-        {episodes.map(({ id, name, air_date, episode }) => (
-          <EpisodeCard
-            key={id}
-            name={name}
-            air_date={air_date}
-            episode={episode}
-          />
-        ))}
-      </section>
-
+      {activePage === 'characters' && (
+        <section className="CharacterCard">
+          {characters.map(({ id, name, image, species, status }) => (
+            <CharacterCard
+              key={id}
+              name={name}
+              image={image}
+              species={species}
+              status={status}
+            ></CharacterCard>
+          ))}
+        </section>
+      )}
+      {activePage === 'locations' && (
+        <section className="LocationCard">
+          {locations.map(({ id, type, name, dimension }) => (
+            <LocationCard
+              key={id}
+              type={type}
+              name={name}
+              dimension={dimension}
+            />
+          ))}
+        </section>
+      )}
+      {activePage === 'episodes' && (
+        <section className="EpisodeCard">
+          {episodes.map(({ id, name, air_date, episode }) => (
+            <EpisodeCard
+              key={id}
+              name={name}
+              air_date={air_date}
+              episode={episode}
+            />
+          ))}
+        </section>
+      )}
       <section className="Navigation">
-        activePage={activePage}
-        navItems={navItems}
-        setActivePage={setActivePage}
+        <Navigation
+          activePage={activePage}
+          navItems={navItems}
+          setActivePage={setActivePage}
+        />
       </section>
     </div>
   )
