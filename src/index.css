@@ -1,14 +1,17 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Raleway&display=swap');
 
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Gloria Hallelujah', sans-serif;
+  text-align: center;
 }
 
 code {

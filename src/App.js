@@ -38,20 +38,21 @@ export default function App() {
   return (
     <div className="App">
       {activePage === 'characters' && (
-        <section className="CharacterCard">
-          {characters.map(({ id, name, image, species, status }) => (
+        <section className="CharactersSection">
+          {characters.map(({ id, name, image, species, status, location }) => (
             <CharacterCard
               key={id}
               name={name}
               image={image}
               species={species}
               status={status}
+              location={location.name}
             ></CharacterCard>
           ))}
         </section>
       )}
       {activePage === 'locations' && (
-        <section className="LocationCard">
+        <section>
           {locations.map(({ id, type, name, dimension }) => (
             <LocationCard
               key={id}
@@ -63,7 +64,7 @@ export default function App() {
         </section>
       )}
       {activePage === 'episodes' && (
-        <section className="EpisodeCard">
+        <section>
           {episodes.map(({ id, name, air_date, episode }) => (
             <EpisodeCard
               key={id}
