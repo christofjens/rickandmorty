@@ -1,6 +1,6 @@
 .App {
   height: 100vh;
-  max-width: 880px;
+  max-width: 900px;
   margin: 0 auto;
   display: grid;
   grid-template-rows: auto 48px;
